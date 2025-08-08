@@ -1,4 +1,11 @@
+const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
 export function getRandomId(): string {
-  const CHARS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  return Array.from({ length: 20 }, () => CHARS[~~(Math.random() * CHARS.length)]).join('');
+  return Array.from({ length: 20 }, () =>
+    CHARS[~~(Math.random() * CHARS.length)]
+  ).join('');
+}
+
+export function getRandomInt(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
